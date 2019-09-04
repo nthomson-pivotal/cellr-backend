@@ -48,7 +48,6 @@ spec:
     metadata:
       labels:
         app: cellr-backend
-        something: bleh
     spec:
       containers:
       - name: cellr-backend
