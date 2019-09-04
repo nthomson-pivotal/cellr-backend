@@ -51,6 +51,6 @@ spec:
     spec:
       containers:
       - name: cellr-backend
-        image: harbor.pb7.gcp.paasify.org/library/cellr-backend
+        image: harbor.pb2.gcp.paasify.org/library/cellr-backend
         ports:
         - containerPort: 8080
