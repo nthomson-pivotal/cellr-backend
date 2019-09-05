@@ -8,10 +8,16 @@ spec:
   selector:
     matchLabels:
       app: cellr-backend-app
+      purpose: '${ parameters.namespace }'
   template:
     metadata:
       labels:
         app: cellr-backend-app
+        purpose: '${ parameters.namespace }'
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: '8080'
+        prometheus.io/scrape: 'true'
     spec:
       containers:
       - name: cellr-backend
