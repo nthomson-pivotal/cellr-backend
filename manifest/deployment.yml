@@ -24,5 +24,10 @@ spec:
       containers:
       - name: cellr-backend
         image: harbor.pb2.gcp.paasify.org/library/cellr-backend
+        resources:
+          requests:
+            memory: "1Gi"
+          limits:
+            memory: "1Gi"
         ports:
         - containerPort: 8080

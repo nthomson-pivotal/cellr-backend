@@ -7,3 +7,4 @@ management:
 fault:
   pattern: "/api/*"
   chance: 0
+  latency: 0

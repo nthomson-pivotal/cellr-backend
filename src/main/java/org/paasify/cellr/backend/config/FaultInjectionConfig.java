@@ -16,8 +16,11 @@ public class FaultInjectionConfig {
     @Value("${fault.statusCode:500}")
     private int faultStatusCode;
 
+    @Value("${fault.latency:0}")
+    private int faultLatency;
+
     @Bean
     public FaultInterceptor faultInterceptor() {
-        return new FaultInterceptor(faultPattern, faultChance, faultStatusCode);
+        return new FaultInterceptor(faultPattern, faultChance, faultStatusCode, faultLatency);
     }
 }
