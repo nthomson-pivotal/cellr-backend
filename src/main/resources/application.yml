@@ -6,4 +6,4 @@ management:
 
 fault:
   pattern: "/api/*"
-  chance: 0
+  chance: 0.3
