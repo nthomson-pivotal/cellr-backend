@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: cellr-backend-app
+  name: 'cellr-backend-app-${ parameters.purpose }'
   namespace: '${ parameters.namespace }'
+  labels:
+    purpose: '${ parameters.purpose }'
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: cellr-backend-app
-      purpose: '${ parameters.namespace }'
+      purpose: '${ parameters.purpose }'
   template:
     metadata:
       labels:
         app: cellr-backend-app
-        purpose: '${ parameters.namespace }'
+        purpose: '${ parameters.purpose }'
       annotations:
         prometheus.io/path: /actuator/prometheus
         prometheus.io/port: '8080'
