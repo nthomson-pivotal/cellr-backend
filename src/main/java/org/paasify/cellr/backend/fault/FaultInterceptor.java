@@ -31,7 +31,7 @@ public class FaultInterceptor extends HandlerInterceptorAdapter {
         Matcher matcher = pattern.matcher(request.getRequestURI());
 
         if(matcher.find()) {
-            if(random.nextDouble() > this.chance) {
+            if(random.nextDouble() < this.chance) {
                 response.sendError(this.faultStatusCode);
                 response.setHeader(HEADER_NAME, Boolean.TRUE.toString());
 
